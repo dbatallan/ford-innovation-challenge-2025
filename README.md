@@ -20,4 +20,4 @@ This project was developed for the Ford Innovation Challenge 2025, focusing on c
 ![Ford Challenge](ford-challenge.png)
 
 ## GitHub Link
-[Project Repository](https://github.com/tuusuario/ford-innovation-challenge-2025)
+[Project Repository](https://github.com/dbatallan/ford-innovation-challenge-2025)
