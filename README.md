@@ -1,5 +1,8 @@
 # Ford Innovation Challenge – Features Edition 2025
 
+## Gallery
+![Ford Challenge](ford-challenge.png)
+
 ## Overview
 This project was developed for the Ford Innovation Challenge 2025, focusing on creating an innovative feature for the new Ford pickup. The goal was to design a complete feature workflow including inputs, outputs, and system behavior.
 
@@ -16,8 +19,7 @@ This project was developed for the Ford Innovation Challenge 2025, focusing on c
 - Python  
 - OpenSCAD  
 
-## Gallery
-![Ford Challenge](ford-challenge.png)
+
 
 ## GitHub Link
 [Project Repository](https://github.com/dbatallan/ford-innovation-challenge-2025)
