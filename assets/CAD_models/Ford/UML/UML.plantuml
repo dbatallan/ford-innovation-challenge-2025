@@ -1,0 +1,72 @@
+@startuml
+' ================================
+' Estilo general
+' ================================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing true
+
+skinparam actor {
+  BackgroundColor #BBDEFB
+  BorderColor #1565C0
+  FontColor black
+  FontSize 14
+}
+
+skinparam participant {
+  FontColor black
+  FontSize 13
+  BorderRoundCorner 15
+}
+
+skinparam sequence {
+  ArrowThickness 2
+  LifeLineBorderColor #444444
+  LifeLineBackgroundColor #F2F2F2
+  GroupBorderColor #999999
+  GroupBackgroundColor #F9F9F9
+}
+
+' ================================
+' Participantes
+' ================================
+actor Usuario <<Human>> #BBDEFB
+participant "Sistema de caja y peso" as CajaPeso #B3E5FC
+participant "Sistema de HMI" as HMI #C8E6C9
+participant "Sistema de luces" as Luces #FFF9C4
+participant "Sistema de audio" as Audio #FFCCBC
+
+' ================================
+' Flujo con activaciones y flechas
+' ================================
+Usuario -[#1565C0]> CajaPeso: ColocarCarga()
+activate CajaPeso #E1F5FE
+CajaPeso -[#000000]> CajaPeso: Registrar peso inicial (peso_base_st)
+deactivate CajaPeso
+
+loop Durante el viaje
+  Usuario -[#1565C0]> CajaPeso: Vehículo en movimiento
+  activate CajaPeso #E1F5FE
+  CajaPeso -[#000000]> CajaPeso: Medir peso actual
+  deactivate CajaPeso
+end
+
+CajaPeso -[#CC0000]> HMI: AlertaPeso_rqst\n(caída significativa detectada)
+activate HMI #E8F5E9
+
+HMI -[#000000]> Luces: PrenderLuzTablero_rqst
+activate Luces #FFFDE7
+Luces -[#33AA33]> Usuario: LuzCargaRojo_st
+deactivate Luces
+
+HMI -[#000000]> Audio: PrenderAlertaSonora_rqst
+activate Audio #FBE9E7
+Audio -[#33AA33]> Usuario: SonidoAlarma
+deactivate Audio
+deactivate HMI
+
+Usuario -[#1565C0]> HMI: ApagarAlerta_rqst (opcional)
+activate HMI #E8F5E9
+HMI -[#000000]> Luces: ApagarLuzTablero_rqst
+HMI -[#000000]> Audio: ApagarAlertaSonora_rqst
+deactivate HMI
+@enduml
