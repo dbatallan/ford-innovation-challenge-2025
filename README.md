@@ -1,6 +1,8 @@
 # Ford Innovation Challenge - Features Edition 2025
 ## Sistema de Monitoreo de Carga y Estabilidad: "Stability Check" / "Pesos Pesados"
 
+![Reconocimiento Ford Innovation Challenge](./ford-challenge.png)
+
 Este repositorio contiene la arquitectura de software, modelado funcional, análisis de riesgos y activos de diseño 3D para la propuesta de ingeniería **Stability Check**, desarrollada para la nueva línea de pickups Ford en el marco del **Ford Innovation Challenge 2025**.
 
 ---
